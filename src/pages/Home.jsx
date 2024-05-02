@@ -21,7 +21,14 @@ function Home() {
     
   const authStatus = useSelector((state) => state.auth.status)
 
-  if(loading) return <h1>fetching your posts!!</h1>
+  if(loading) return (
+    <div className="flex justify-center items-center flex-col">
+        <div className="h-20 w-20 rounded-full animate-spin border border-orange-500 my-4"> 
+            <div className='bg-white w-2 h-2 rounded-full'></div>
+        </div>
+        <h1 className='text-xl text-white my-2'>Hold On Tight!! fetching your data.</h1>
+    </div>
+  )
   
   return(
     <div className=' w-full py-8'>
@@ -32,7 +39,7 @@ function Home() {
                 ):(
             <div className='flex flex-wrap'>
                 {posts?.map((post)=>(
-                        <div key={post.$id} className=' py-2 w-1/4'>
+                        <div key={post.$id} className=' py-2 w-1/4 mx-3'>
                             <PostCard {...post} />
                         <div/>
             </div>

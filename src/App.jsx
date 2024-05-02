@@ -28,8 +28,8 @@ function App() {
   // console.log(import.meta.env.VITE_APPWRITE_URL);
 
   return !loading ? (
-    <div className=' min-h-screen flex flex-wrap content-between bg-grey-400'>
-      <div className=' w-full block'>
+    <div className=' min-h-screen flex flex-wrap content-between bg-gray-400'>
+      <div className=' w-[100%] block'>
         <Header/>
         <main>
           <Outlet/>
