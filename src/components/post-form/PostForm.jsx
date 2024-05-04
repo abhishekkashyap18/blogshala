@@ -23,10 +23,10 @@ function PostForm({ post }) {
     const submit = async (data) => {
         setLoading(true);
         if(post){
-           const file = data.image[0] ? service.uploadFile(data.image[0]) : null
+           const file = data.image[0] ? await service.uploadFile(data.image[0]) : null
 
             if(file){
-                service.deleteFile(post.featured_image)
+                await service.deleteFile(post.featured_image)
             }
 
             const dbPost = await service.updatePost(post.$id,{
@@ -35,9 +35,10 @@ function PostForm({ post }) {
 
             });
 
-                if(dbPost){
-                    navigate(`/post/${dbPost.$id}`)
-                }
+
+            if(dbPost){
+                navigate(`/post/${dbPost.$id}`)
+            }
         }
         else{
             const file = await service.uploadFile(data.image[0]);
@@ -90,7 +91,7 @@ function PostForm({ post }) {
     <div className="w-2/3 px-2">
         <Input
             label="Title :"
-            placeholder="Title"
+            placeholder="Title should not be more than 36 character"
             className="mb-4"
             {...register("title", { required: true })}
         />
@@ -129,7 +130,17 @@ function PostForm({ post }) {
             {...register("status", { required: true })}
         />
         <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
-            {post ? "Update" : "Submit"}
+            {post ? isLoading? (
+                <div className="flex justify-center items-center flex-col">
+                <div className="h-5 w-5 rounded-full animate-spin border border-red-500 my-1">
+                <div className="bg-white w-1 h-1 rounded-full"></div>
+                </div>
+                </div>) :"Update" : isLoading ? (
+                <div className="flex justify-center items-center flex-col">
+                <div className="h-5 w-5 rounded-full animate-spin border border-red-500 my-1">
+                <div className="bg-white w-1 h-1 rounded-full"></div>
+                </div>
+                </div>) : "submit"}
         </Button>
         
     </div>

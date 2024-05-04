@@ -37,9 +37,9 @@ function Home() {
                 posts?.length === 0 ? (
                     <h1>No post is there, create one</h1>
                 ):(
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap flex-col justify-center items-center sm:flex-row sm:justify-start'>
                 {posts?.map((post)=>(
-                        <div key={post.$id} className=' py-2 w-1/4 mx-3'>
+                        <div key={post.$id} className=' p-2'>
                             <PostCard {...post} />
                         <div/>
             </div>
