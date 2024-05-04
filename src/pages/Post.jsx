@@ -37,7 +37,14 @@ export default function Post() {
         });
     };
 
-    if(isLoading) return <h1>loading your data..</h1>
+    if(isLoading) return (
+        <div className="flex justify-center items-center flex-col">
+            <div className="h-20 w-20 rounded-full animate-spin border border-orange-500 my-4"> 
+                <div className='bg-white w-2 h-2 rounded-full'></div>
+            </div>
+            <h1 className='text-xl text-white my-2'>Hold On Tight!! fetching your data.</h1>
+        </div>
+      )
 
     return post ? (
         <div className="py-8">
