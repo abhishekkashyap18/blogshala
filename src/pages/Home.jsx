@@ -51,7 +51,7 @@ function Home() {
 
                 <div className=" flex sm:flex-row h-screen flex-col">
                     <div className=' sm:w-[50%] h-96 w-full '>
-                        <img src="/src/assets/th (11).jpeg" alt="Image" className='h-96' />
+                        <img src="th (11).jpeg" alt="Image" className='h-96' />
                     </div>
                     <div className='h-96 flex flex-col justify-center items-center my-5'> 
                         <h1 className='sm:text-4xl font-bold text-center'>Welcome to our not-so-secret diary</h1>
