@@ -26,7 +26,7 @@ function Home() {
   if(loading) return (
     <div className="flex justify-center items-center flex-col">
         <div className="h-20 w-20 rounded-full animate-spin border border-orange-500 my-4"> 
-            <div className='bg-white w-2 h-2 rounded-full'></div>
+            <div className='bg-black w-2 h-2 rounded-full'></div>
         </div>
         <h1 className='text-xl text-white my-2'>Hold On Tight!! fetching your data.</h1>
     </div>
@@ -48,15 +48,21 @@ function Home() {
    ))} {" "} </div>
                 )
         ) : (
-            <div className=" flex flex-col justify-center items-center h-screen">
-                <h1 className=' sm:text-2xl text-white my-3'>Turn your Thoughts into <span className=' font-bold text-black hover:text-white'>&lt;captivating content!!&gt; </span></h1>
-                <p className='text-white sm:w-[60%] text-center my-3 sm:font-medium px-4'>Discover a world of knowledge and inspiration. Our blog offers a diverse range of articles on topics that matter. we provide informative, engaging, and thought-provoking content. Join our community of readers and explore a wealth of ideas.</p>
-                <h2 className='sm:text-xl border border-black text-white bg-black w-fit p-3 mt-3 rounded-md hover:bg-slate-800' onClick={()=> navigate("/signup")}>Signup to create and read blogs</h2>
+
+                <div className=" flex sm:flex-row h-screen flex-col">
+                    <div className=' sm:w-[50%] h-96 w-full '>
+                        <img src="/src/assets/th (11).jpeg" alt="Image" className='h-96' />
+                    </div>
+                    <div className='h-96 flex flex-col justify-center items-center my-5'> 
+                        <h1 className='sm:text-4xl font-bold text-center'>Welcome to our not-so-secret diary</h1>
+                        <h1 className=' sm:text-2xl text-black my-3 text-center font-semibold'>Pen down your thoughts!</h1>
+                        <button className=' border border-orange-500 bg-orange-400 text-white rounded-md w-28 h-10 text-center my-3 hover:bg-orange-300' 
+                        onClick={()=>navigate("/signup")}
+                        >SignUP</button>
+                    </div>
+                </div>
 
                 
-
-            </div>
-            
         )}
         </Container>
     </div>

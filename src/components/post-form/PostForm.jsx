@@ -133,12 +133,12 @@ function PostForm({ post }) {
             {post ? isLoading? (
                 <div className="flex justify-center items-center flex-col">
                 <div className="h-5 w-5 rounded-full animate-spin border border-red-500 my-1">
-                <div className="bg-white w-1 h-1 rounded-full"></div>
+                <div className="bg-black w-1 h-1 rounded-full"></div>
                 </div>
                 </div>) :"Update" : isLoading ? (
                 <div className="flex justify-center items-center flex-col">
                 <div className="h-5 w-5 rounded-full animate-spin border border-red-500 my-1">
-                <div className="bg-white w-1 h-1 rounded-full"></div>
+                <div className="bg-black w-1 h-1 rounded-full"></div>
                 </div>
                 </div>) : "submit"}
         </Button>
